@@ -1,8 +1,11 @@
 import React from "react";
+import Login from "./Login";
 
 class AppComponent extends React.Component {
 	render() {
-		return <div className="App">test</div>;
+		return <div className="App">
+			<Login></Login>
+		</div>;
 	}
 }
 
