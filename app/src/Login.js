@@ -1,7 +1,6 @@
 import React from "react";
 
 class Login extends React.Component {
-    state = {};
 
     constructor(props) {
         super(props);
@@ -28,16 +27,16 @@ class Login extends React.Component {
     }
 
     onChangeUserId(event) {
-        this.setState( (state) => {
-            console.log(state);
+        this.setState( () => {
+            console.log(event.target.value);
             return {userId: event.target.value}
         });
     }
 
     onChangePwd(event) {
 
-        this.setState( (state) => {
-            console.log(state);
+        this.setState( () => {
+            console.log(event.target.value);
             return {pwd: event.target.value}
         });
     }
@@ -45,21 +44,18 @@ class Login extends React.Component {
     submitHandler(event) {
         console.log('click');
         event.preventDefault();
+        
+        
     }
 
     render() {
         return (
             <div className="Login">
                 <form onSubmit={this.submitHandler} >
-                    <input type="text" name="userId" placeholder="아이디 또는 이메일" 
-                            onChange={this.onChangeUserId} 
-                            //value={this.state.userId}
-                            />
-                    <input type="password" name="pwd" placeholder="비밀번호" 
-                            onChange={this.onChangePwd}
-                            //value={this.state.pwd} 
-                            />
-
+                    <input type="text" name="userId" placeholder="아이디 또는 이메일"
+                            onChange={this.onChangeUserId}/>
+                    <input type="password" name="pwd" placeholder="비밀번호"
+                            onChange={this.onChangePwd}/>
                     <button onClick={this.submitHandler}>로그인</button>
                 </form>
             </div>
